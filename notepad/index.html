@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Notepad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <!-- LOGIN SECTION -->
+    <div id="login-section">
+        <h2>Login</h2>
+        <div id="login-error" class="error"></div>
+        <input type="text" id="username" placeholder="Username" autocomplete="off">
+        <input type="password" id="password" placeholder="Password">
+        <button id="login-btn">Login</button>
+        <p><small>Users are loaded from <code>users.txt</code> (e.g. alice:pass, bob:pass)</small></p>
+    </div>
+
+    <!-- MAIN APP SECTION (hidden until login) -->
+    <div id="main-section" class="hidden">
+        <div class="header">
+            <div class="user-info">Logged in as: <span id="current-user"></span></div>
+            <button id="logout-btn" class="secondary">Logout</button>
+        </div>
+
+        <div class="section">
+            <h3>Your Notepads</h3>
+            <button id="create-notepad-btn">+ Create New Notepad</button>
+            <div id="notepad-list"></div>
+        </div>
+
+        <!-- Notepad editor (hidden until a notepad is opened) -->
+        <div id="editor-section" class="section hidden">
+            <h3>
+                <span id="editor-title"></span>
+                <span id="editor-badge" class="badge"></span>
+            </h3>
+            <textarea id="notepad-content" rows="10" placeholder="Notepad content..."></textarea>
+            <div style="display: flex; gap: 8px; margin: 10px 0;">
+                <button id="save-notepad-btn">Save</button>
+                <button id="close-editor-btn" class="secondary">Close</button>
+            </div>
+
+            <!-- Share management (only visible to owner) -->
+            <div id="share-section" class="hidden">
+                <h4>Share this notepad</h4>
+                <div id="share-list"></div>
+                <div style="display: flex; gap: 8px;">
+                    <input type="text" id="share-username" placeholder="Username">
+                    <select id="share-permission">
+                        <option value="read">Read only</option>
+                        <option value="write">Read & Write</option>
+                    </select>
+                    <button id="add-share-btn">Add</button>
+                </div>
+                <div id="share-error" class="error"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

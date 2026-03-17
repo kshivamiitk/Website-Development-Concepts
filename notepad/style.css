@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
+}
+
+#app {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+/* login & app sections */
+.hidden {
+    display: none !important;
+}
+
+.section {
+    margin: 20px 0;
+}
+
+/* forms & buttons */
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.danger {
+    background: #dc3545;
+}
+
+button.secondary {
+    background: #6c757d;
+}
+
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* notepad list */
+.notepad-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.notepad-item:last-child {
+    border: none;
+}
+
+.notepad-info {
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.badge {
+    background: #28a745;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin-left: 8px;
+}
+
+.badge.owner {
+    background: #ffc107;
+    color: #333;
+}
+
+.badge.readonly {
+    background: #6c757d;
+}
+
+/* share list */
+.share-entry {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 5px 0;
+}
+
+.share-entry span {
+    flex: 1;
+}
+
+.small-btn {
+    padding: 4px 8px;
+    font-size: 0.9em;
+}
+
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    font-weight: bold;
+}
+
+/* error */
+.error {
+    color: #dc3545;
+    font-size: 0.9em;
+}
